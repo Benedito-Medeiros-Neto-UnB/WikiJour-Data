@@ -7,18 +7,19 @@
 3) Pronto projeto estará rodando no localhost:8000.
 
 Instalar em servidor de produção:
-
+```
 sudo apt-get update
 
 sudo apt-get install python3  python3-pip
-
-pip3 install -r requirements.txt
 
 git clone https://github.com/Benedito-Medeiros-Neto-UnB/WikiJour-Data.git
 
 cd WikiJour-Data
 
+pip3 install -r requirements.txt
+
 vi myproject/settings.py 
 ALLOWED_HOSTS = ['ip_servidor']
 
-python3 ./manage.py runserver 0.0.0.0:8000 &
+python3 ./manage.py runserver 0.0.0.0:8000
+```
