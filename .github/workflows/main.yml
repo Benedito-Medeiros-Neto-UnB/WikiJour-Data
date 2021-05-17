@@ -33,6 +33,6 @@ jobs:
           chmod 400 deployment.key
       - name: Update this on production server
         run: |
-          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 id | grep ~/test.txt
-          # ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 git -C /home/django_websites/WikiJour-Data fetch origin
-          # ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 pip3 install -r /home/django_websites/WikiJour-Data/requirements.txt
+          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 id
+        # ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 git -C /home/django_websites/WikiJour-Data fetch origin
+        # ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 pip3 install -r /home/django_websites/WikiJour-Data/requirements.txt
