@@ -33,10 +33,18 @@ jobs:
           chmod 400 deployment.key
       - name: Update this on production server
         run: |
-          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 git -C /home/ubuntu/WikiJour-Data status
-          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 git -C /home/ubuntu/WikiJour-Data pull
-          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 pip3 install -r /home/ubuntu/WikiJour-Data/requirements.txt
-          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 python3 /home/ubuntu/WikiJour-Data/manage.py migrate
-          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 python3 /home/ubuntu/WikiJour-Data/manage.py test
-          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 python3 /home/ubuntu/WikiJour-Data/manage.py runserver 0.0.0.0:8000&
+          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 git -C /home/django_websites/WikiJour-Data status
+          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 git -C /home/django_websites/WikiJour-Data pull
+          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 pip3 install -r /home/django_websites/WikiJour-Data/requirements.txt
+          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 python3 /home/django_websites/WikiJour-Data/manage.py migrate
+          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 python3 /home/django_websites/WikiJour-Data/manage.py test
+          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 sudo systemctl reload apache2
+
+
+#          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 git -C /home/ubuntu/WikiJour-Data status
+#          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 git -C /home/ubuntu/WikiJour-Data pull
+#          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 pip3 install -r /home/ubuntu/WikiJour-Data/requirements.txt
+#          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 python3 /home/ubuntu/WikiJour-Data/manage.py migrate
+#          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 python3 /home/ubuntu/WikiJour-Data/manage.py test
+#          ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@35.80.178.89 python3 /home/ubuntu/WikiJour-Data/manage.py runserver 0.0.0.0:8000&
 
