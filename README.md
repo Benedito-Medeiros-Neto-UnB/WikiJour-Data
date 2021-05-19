@@ -17,6 +17,8 @@ git clone https://github.com/Benedito-Medeiros-Neto-UnB/WikiJour-Data.git
 cd WikiJour-Data
 
 pip3 install -r requirements.txt
+
+python3 manage.py collectstatic
 ```
 
 Para executar na porta 8000 sem o Apache:
@@ -44,9 +46,8 @@ Configurar o Apache para iniciar pelo wsgi_production.py ao invés do wsgi.py
     ServerName wikijour.filosofiacienciaarte.org
     ServerAlias wikijour.filosofiacienciaarte.org *.wikijour.filosofiacienciaarte.org
     DocumentRoot /home/django_websites/WikiJour-Data/myproject
-    #DocumentRoot /var/www/html
 
-    Alias /static /home/django_websites/WikiJour-Data/myproject/static
+    #Alias /static /home/django_websites/WikiJour-Data/myproject/static
     <Directory /home/django_websites/WikiJour-Data/myproject/static>
         Require all granted
     </Directory>
@@ -57,7 +58,6 @@ Configurar o Apache para iniciar pelo wsgi_production.py ao invés do wsgi.py
         </Files>
     </Directory>
 
-    #WSGIDaemonProcess wikijour.filosofiacienciaarte.org python-path=/home/django_websites/wikijour python-home=/home/django_websites/wikijour/myprojectenv
     WSGIDaemonProcess wikijour.filosofiacienciaarte.org python-path=/home/django_websites/WikiJour-Data python-home=/home/django_websites/django-virtualenv
     WSGIProcessGroup wikijour.filosofiacienciaarte.org
     WSGIScriptAlias / /home/django_websites/WikiJour-Data/myproject/wsgi_production.py
