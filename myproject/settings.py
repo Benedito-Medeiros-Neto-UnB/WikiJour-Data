@@ -216,7 +216,7 @@ CMS_TEMPLATES = (
     ('sobrenos.html', 'sobrenosPage'),
     ('acervo.html', 'acervoPage'),
     ('usarEsseTemplate.html', 'usarEsteTemplate'),
-    ('raspagem-infografico.html', 'raspagemTemplate'),
+    ('raspagem_infografico.html', 'raspagemTemplate')
 )
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
