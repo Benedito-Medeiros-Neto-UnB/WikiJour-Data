@@ -1,7 +1,7 @@
 {% load cms_tags menu_tags sekizai_tags %}
 {% load static %}
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -38,8 +38,6 @@
     <div class="container d-flex align-items-center">
 
       <h1 class="logo mr-auto"><a href="/">{% page_attribute "page_title" %}<span>.</span></a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>-->
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
@@ -56,13 +54,13 @@
       <h1>
         <span>
           {% block content %}
-            {% placeholder "content" %}
+            {% placeholder "Titulo" %}
           {% endblock content %}
         <span>
       </h1>
       <h2>
         {% block content1 %}
-          {% placeholder "content1" %}
+          {% placeholder "SubTitulo" %}
         {% endblock content1 %}
       </h2>
       <div class="d-flex">
@@ -85,16 +83,16 @@
           <div class="col-lg-12 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <h3>
               {% block content2 %}
-                {% placeholder "content2" %}
+                {% placeholder "Titulo do Texto" %}
               {% endblock content2 %}
             </h3>
             <p>
               {% block content3 %}
-                {% placeholder "content3" %}
+                {% placeholder "Paragrafo" %}
               {% endblock content3 %}
             </p>
               {% block content4 %}
-                {% placeholder "content4" %}
+                {% placeholder "Paragrafo2" %}
               {% endblock content4 %}
           </div>
         </div>
@@ -102,27 +100,27 @@
     </section><!-- End About Section -->
 
         <!-- ======= About Section ======= -->
-    <section id="about" class="about section-bg">
-      <div class="container" data-aos="fade-up">
+    {% comment %}<section id="about" class="about section-bg">{% endcomment %}
+      {% comment %}<div class="container" data-aos="fade-up">{% endcomment %}
 
-        <div class="section-title">
-          <h2>Sobre o site</h2>
-          <p>Este site foi desenvolvido na disciplina de Tópicos avançados em Computadores.</p>
-        </div>
+        {% comment %}<div class="section-title">{% endcomment %}
+          {% comment %}<h2>Sobre o site</h2>{% endcomment %}
+          {% comment %}<p>Este site foi desenvolvido na disciplina de Tópicos avançados em Computadores.</p>{% endcomment %}
+        {% comment %}</div>{% endcomment %}
 
-        <div class="row">
+        {% comment %}<div class="row">{% endcomment %}
          
-          <div class="col-lg-12 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <h3>Com o intuito de ajudar alunos/jornalistas do curso de Jornalismo na Universidade de Brasília.</h3>
+          {% comment %}<div class="col-lg-12 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">{% endcomment %}
+            {% comment %}<h3>Com o intuito de ajudar alunos/jornalistas do curso de Jornalismo na Universidade de Brasília.</h3>{% endcomment %}
             
-            <p>
-              Estaremos disponibilizando tutoriais de ferramentas comuns no dia a dia trabalhando com a área de Ciência de dados. 
-            </p>
-          </div>
-        </div>
+            {% comment %}<p>{% endcomment %}
+              {% comment %}Estaremos disponibilizando tutoriais de ferramentas comuns no dia a dia trabalhando com a área de Ciência de dados. {% endcomment %}
+            {% comment %}</p>{% endcomment %}
+          {% comment %}</div>{% endcomment %}
+        {% comment %}</div>{% endcomment %}
 
-      </div>
-    </section><!-- End About Section -->
+      {% comment %}</div>{% endcomment %}
+    {% comment %}</section><!-- End About Section -->{% endcomment %}
 
 
   </main><!-- End #main -->
@@ -142,7 +140,6 @@
   <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
   <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
 
-  <!-- Template Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
   {% render_block "js" %}
 
