@@ -215,7 +215,8 @@ CMS_TEMPLATES = (
     ('webscrapper.html', 'webScrapperPage'),
     ('sobrenos.html', 'sobrenosPage'),
     ('acervo.html', 'acervoPage'),
-    ('usarEsseTemplate.html', 'usarEsteTemplate')
+    ('usarEsseTemplate.html', 'usarEsteTemplate'),
+    ('raspagem-infografico.html', 'raspagemTemplate'),
 )
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
